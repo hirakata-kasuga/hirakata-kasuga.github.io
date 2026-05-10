@@ -163,51 +163,6 @@
 
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* ── 配布物セクション ── */
-    .pdf-list { list-style: none; }
-
-    .pdf-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .pdf-item:last-child { border-bottom: none; }
-
-    .pdf-icon {
-      width: 44px;
-      height: 44px;
-      background: #FFF0F0;
-      border-radius: var(--radius);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      flex-shrink: 0;
-    }
-
-    .pdf-meta { flex: 1; }
-    .pdf-name { font-weight: 600; font-size: 0.92rem; color: var(--text); }
-    .pdf-date { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
-
-    .pdf-dl-btn {
-      padding: 6px 16px;
-      background: var(--primary);
-      color: white;
-      border-radius: var(--radius);
-      font-size: 0.83rem;
-      font-weight: 600;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .pdf-dl-btn:hover {
-      background: var(--primary-dark);
-      color: white;
-    }
-
     /* ── スマホ対応 ── */
     @media (max-width: 600px) {
       .nc-body { padding: 16px 18px; }
@@ -262,49 +217,6 @@
     <!-- ここにJavaScriptでカードが挿入される -->
     <div id="newsContainer"></div>
 
-  </div>
-</section>
-
-<!-- ── 配布物ダウンロード ── -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="section-head">
-      <h2 class="section-title">配布物ダウンロード</h2>
-      <p class="section-desc">回覧板・チラシ等のPDFをダウンロードできます。<br>各お知らせカードの「添付ファイルを見る」からもご覧いただけます。</p>
-    </div>
-
-    <div class="alert alert-info" style="margin-bottom:24px;">
-      📄 GoogleドライブにPDFをアップし、スプレッドシートにURLを記入すると自動で表示されます。
-    </div>
-
-    <div class="card">
-      <ul class="pdf-list">
-        <li class="pdf-item">
-          <div class="pdf-icon">📄</div>
-          <div class="pdf-meta">
-            <div class="pdf-name">令和8年度 活動計画書</div>
-            <div class="pdf-date">2026年4月1日</div>
-          </div>
-          <a href="#" class="pdf-dl-btn" onclick="alert('準備中です'); return false;">開く</a>
-        </li>
-        <li class="pdf-item">
-          <div class="pdf-icon">📄</div>
-          <div class="pdf-meta">
-            <div class="pdf-name">令和7年度 活動報告書</div>
-            <div class="pdf-date">2026年2月1日</div>
-          </div>
-          <a href="#" class="pdf-dl-btn" onclick="alert('準備中です'); return false;">開く</a>
-        </li>
-        <li class="pdf-item">
-          <div class="pdf-icon">📄</div>
-          <div class="pdf-meta">
-            <div class="pdf-name">令和7年度 活動計画書</div>
-            <div class="pdf-date">2025年4月1日</div>
-          </div>
-          <a href="#" class="pdf-dl-btn" onclick="alert('準備中です'); return false;">開く</a>
-        </li>
-      </ul>
-    </div>
   </div>
 </section>
 
