@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | 春日小学校区コミュニティ協議会</title>
+  <meta name="description" content="春日小学校区コミュニティ協議会へのお問い合わせページです。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <div class="logo-mark">🌸</div>
+      <div class="logo-text">春日小学校区コミュニティ協議会<small>大阪府枚方市</small></div>
+    </a>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav">
+      <a href="index.html">ホーム</a>
+      <a href="about.html">協議会について</a>
+      <a href="organizations.html">傘下組織</a>
+      <a href="activities.html">活動情報</a>
+      <a href="news.html">お知らせ</a>
+      <a href="haifubutsu.html">配布物</a>
+      <a href="kouhou.html">広報誌</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">ホーム</a><span>›</span>お問い合わせ</div>
+    <h1>お問い合わせ</h1>
+    <p>協議会へのご質問・ご意見はこちらからどうぞ</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2" style="align-items:start; gap:40px;">
+
+      <!-- フォーム -->
+      <div>
+        <div class="section-head">
+          <h2 class="section-title">お問い合わせフォーム</h2>
+          <p class="section-desc">内容を確認のうえ、担当者よりご連絡いたします</p>
+        </div>
+
+        <div class="alert alert-info">
+          ※ お返事にはお時間をいただく場合があります。お急ぎの場合は各自治会窓口へご相談ください。
+        </div>
+
+        <div class="card" style="margin-top:20px;">
+          <form id="contactForm">
+            <div class="form-group">
+              <label class="form-label">
+                お名前 <span class="req">※必須</span>
+              </label>
+              <input type="text" class="form-control" placeholder="山田 太郎" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                メールアドレス <span class="req">※必須</span>
+              </label>
+              <input type="email" class="form-control" placeholder="example@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">お住まいの地区</label>
+              <select class="form-control">
+                <option value="">選択してください</option>
+                <option>茄子作地区</option>
+                <option>春日丘地区</option>
+                <option>香楽地区</option>
+                <option>松下茄子作地区</option>
+                <option>茄子作広野地区</option>
+                <option>茄子作住宅地区</option>
+                <option>高田２丁目地区</option>
+                <option>京阪ひろ野地区</option>
+                <option>高田府住地区</option>
+                <option>香里ハイツ地区</option>
+                <option>南茄子作地区</option>
+                <option>その他・区外</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                お問い合わせ種別 <span class="req">※必須</span>
+              </label>
+              <select class="form-control" required>
+                <option value="">選択してください</option>
+                <option>活動・行事について</option>
+                <option>傘下組織について</option>
+                <option>入会・参加について</option>
+                <option>回覧板・配布物について</option>
+                <option>防災・防犯について</option>
+                <option>福祉・相談について</option>
+                <option>その他</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                お問い合わせ内容 <span class="req">※必須</span>
+              </label>
+              <textarea class="form-control" placeholder="お問い合わせ内容をご記入ください" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%; padding:14px; font-size:1rem;">
+              送信する
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- サイドバー情報 -->
+      <div>
+        <div class="section-head">
+          <h2 class="section-title">その他のご相談窓口</h2>
+        </div>
+
+        <div class="card" style="margin-bottom:20px;">
+          <div style="font-size:1.5rem; margin-bottom:10px;">🏘️</div>
+          <div style="font-weight:700; color:var(--primary-dark); margin-bottom:8px;">各自治会窓口</div>
+          <p style="font-size:0.88rem; color:var(--text-light); line-height:1.7;">お住まいの地区の自治会役員にお気軽にお声がけください。地域の身近な相談窓口です。</p>
+        </div>
+
+        <div class="card" style="margin-bottom:20px;">
+          <div style="font-size:1.5rem; margin-bottom:10px;">🤝</div>
+          <div style="font-weight:700; color:var(--primary-dark); margin-bottom:8px;">民生委員・児童委員</div>
+          <p style="font-size:0.88rem; color:var(--text-light); line-height:1.7;">福祉・生活に関するご相談は、地区担当の民生委員・児童委員にご相談ください。</p>
+        </div>
+
+        <div class="card" style="margin-bottom:20px;">
+          <div style="font-size:1.5rem; margin-bottom:10px;">🏙️</div>
+          <div style="font-weight:700; color:var(--primary-dark); margin-bottom:8px;">枚方市役所</div>
+          <p style="font-size:0.88rem; color:var(--text-light); line-height:1.7;">市の行政サービスに関するお問い合わせは枚方市役所へお願いします。</p>
+          <a href="https://www.city.hirakata.osaka.jp/" target="_blank" rel="noopener" style="font-size:0.85rem; margin-top:8px; display:inline-block;">枚方市公式サイト →</a>
+        </div>
+
+        <div class="card" style="background:var(--primary-pale); border:none;">
+          <div style="font-size:1.5rem; margin-bottom:10px;">🆘</div>
+          <div style="font-weight:700; color:var(--primary-dark); margin-bottom:8px;">緊急の場合</div>
+          <p style="font-size:0.88rem; color:var(--text-light); line-height:1.7;">防犯・防災の緊急事態の場合は、このフォームではなく直接関係機関にご連絡ください。</p>
+          <div style="margin-top:12px; font-size:0.88rem;">
+            <div style="margin-bottom:4px;">🚓 警察：<strong>110</strong></div>
+            <div style="margin-bottom:4px;">🚒 消防・救急：<strong>119</strong></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <div class="logo-mark">🌸</div>
+          <div class="footer-site-name">春日小学校区コミュニティ協議会<small>大阪府枚方市</small></div>
+        </div>
+        <p class="footer-desc">地域の皆さまが安心して暮らせるまちづくりのため、区内の各自治会・各種団体と連携して活動しています。</p>
+      </div>
+      <div>
+        <div class="footer-col-title">サイトマップ</div>
+        <ul class="footer-nav">
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="about.html">協議会について</a></li>
+          <li><a href="organizations.html">傘下組織</a></li>
+          <li><a href="activities.html">活動情報</a></li>
+          <li><a href="news.html">お知らせ</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">関連リンク</div>
+        <ul class="footer-nav">
+          <li><a href="https://www.city.hirakata.osaka.jp/" target="_blank" rel="noopener">枚方市公式サイト</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 春日小学校区コミュニティ協議会 All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
