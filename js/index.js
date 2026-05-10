@@ -5,19 +5,23 @@
   const container = document.getElementById('indexNewsContainer');
   if (!container) return;
 
-  // ローディング表示
   container.innerHTML = '<div style="text-align:center;padding:32px;color:var(--text-muted);">読み込み中...</div>';
 
   try {
     const rows = await fetchSheet('お知らせ');
 
-    // 「公開」列が TRUE のもののみ・新しい順に最大5件
+    if (!rows) {
+      container.innerHTML = '<p style="text-align:center;padding:24px;color:var(--text-muted);">スプレッドシートが未設定です</p>';
+      return;
+    }
+
+    // 「公開」列(G=index6) が TRUE のもののみ・新しい順に最大5件
     const items = rows
-      .filter(r => cellBool(r, 6))   // G列: 公開
+      .filter(r => cellBool(r.c?.[6]))
       .sort((a, b) => {
-        const da = parseDate(cellStr(a, 0));
-        const db = parseDate(cellStr(b, 0));
-        return db - da;
+        const da = parseDate(cellStr(a.c?.[0])).sortKey;
+        const db = parseDate(cellStr(b.c?.[0])).sortKey;
+        return db.localeCompare(da);
       })
       .slice(0, 5);
 
@@ -34,14 +38,10 @@
     };
 
     const li = items.map(r => {
-      const date  = parseDate(cellStr(r, 0));
-      const cat   = cellStr(r, 1);
-      const title = cellStr(r, 2);
-      const pdfUrl = cellStr(r, 5);
-
-      const dateStr = date
-        ? `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,'0')}.${String(date.getDate()).padStart(2,'0')}`
-        : '';
+      const dateStr = parseDate(cellStr(r.c?.[0])).display;
+      const cat     = cellStr(r.c?.[1]);
+      const title   = cellStr(r.c?.[2]);
+      const pdfUrl  = cellStr(r.c?.[5]);
 
       const tagClass = catStyle[cat] || 'tag-info';
 
