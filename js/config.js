@@ -16,5 +16,5 @@
  *    個人の電話番号・住所・メールアドレスは絶対に入力しないでください。
  */
 const SITE_CONFIG = {
-  SPREADSHEET_ID: 'YOUR_SHEET_ID_HERE', // ← ここだけ書き換える
+  SPREADSHEET_ID: '1vCOsZNghw_of0muLrmfdkKL4bPEGEmAHleddrwSEsz4',
 };
