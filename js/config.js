@@ -18,3 +18,4 @@
 const SITE_CONFIG = {
   SPREADSHEET_ID: '1vCOsZNghw_of0muLrmfdkKL4bPEGEmAHleddrwSEsz4',
 };
+window.SITE_CONFIG = SITE_CONFIG;
