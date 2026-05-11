@@ -38,7 +38,7 @@
     .plan-tab-content.active { display: block; }
 
     /* ── スケジュール表 ── */
-    .schedule-table td:first-child {
+    .schedule-table .month-cell {
       font-weight: 700;
       text-align: center;
       white-space: nowrap;
@@ -46,13 +46,13 @@
       background: var(--primary-pale) !important;
       vertical-align: middle;
     }
-    .schedule-table td:nth-child(2) {
+    .schedule-table .date-cell {
       text-align: center;
       white-space: nowrap;
       font-size: 0.87rem;
       color: var(--text-muted);
     }
-    .schedule-table td:nth-child(4) {
+    .schedule-table .note-cell {
       font-size: 0.83rem;
       color: var(--text-muted);
     }
@@ -136,132 +136,132 @@
             <tbody>
               <!-- 4月 (6行) -->
               <tr>
-                <td rowspan="6">4月</td>
-                <td>6</td>
+                <td rowspan="6" class="month-cell">4月</td>
+                <td class="date-cell">6</td>
                 <td>春日小学校入学式</td>
                 <td></td>
               </tr>
-              <tr><td>6</td><td>民生委員委嘱状交付式</td><td></td></tr>
-              <tr><td>7</td><td>東香里中学校入学式</td><td></td></tr>
-              <tr><td>6〜15</td><td>春の全国交通安全運動（立ち番 8日〜15日）</td><td></td></tr>
-              <tr><td>12</td><td>自治会長各種団体代表者会議</td><td></td></tr>
-              <tr><td>25</td><td>総会資料作成・配布</td><td></td></tr>
+              <tr><td class="date-cell">6</td><td>民生委員委嘱状交付式</td><td></td></tr>
+              <tr><td class="date-cell">7</td><td>東香里中学校入学式</td><td></td></tr>
+              <tr><td class="date-cell">6〜15</td><td>春の全国交通安全運動（立ち番 8日〜15日）</td><td></td></tr>
+              <tr><td class="date-cell">12</td><td>自治会長各種団体代表者会議</td><td></td></tr>
+              <tr><td class="date-cell">25</td><td>総会資料作成・配布</td><td></td></tr>
 
               <!-- 5月 (4行) -->
               <tr>
-                <td rowspan="4">5月</td>
-                <td>2</td>
+                <td rowspan="4" class="month-cell">5月</td>
+                <td class="date-cell">2</td>
                 <td>市印刷物連絡文書仕分配布・役員事務連絡</td>
                 <td></td>
               </tr>
-              <tr><td>10</td><td>合同総会</td><td>コミュニティ協議会・福祉委員会・自主防災会</td></tr>
-              <tr><td>20</td><td>第1回校区代表者会議</td><td></td></tr>
-              <tr><td>30</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
+              <tr><td class="date-cell">10</td><td>合同総会</td><td>コミュニティ協議会・福祉委員会・自主防災会</td></tr>
+              <tr><td class="date-cell">20</td><td>第1回校区代表者会議</td><td></td></tr>
+              <tr><td class="date-cell">30</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
 
               <!-- 6月 (5行) -->
               <tr>
-                <td rowspan="5">6月</td>
-                <td>4</td>
+                <td rowspan="5" class="month-cell">6月</td>
+                <td class="date-cell">4</td>
                 <td>東香里中学校体育祭</td>
                 <td></td>
               </tr>
-              <tr><td>—</td><td>校区子ども会行事</td><td>校区こども会交流会</td></tr>
-              <tr><td>14</td><td>運営委員会・課題検討会</td><td></td></tr>
-              <tr><td>21</td><td>コミュニティ連絡協議会総会</td><td></td></tr>
-              <tr><td>27</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
+              <tr><td class="date-cell">—</td><td>校区子ども会行事</td><td>校区こども会交流会</td></tr>
+              <tr><td class="date-cell">14</td><td>運営委員会・課題検討会</td><td></td></tr>
+              <tr><td class="date-cell">21</td><td>コミュニティ連絡協議会総会</td><td></td></tr>
+              <tr><td class="date-cell">27</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
 
               <!-- 7月 (3行) -->
               <tr>
-                <td rowspan="3">7月</td>
-                <td>12</td>
+                <td rowspan="3" class="month-cell">7月</td>
+                <td class="date-cell">12</td>
                 <td>広報委員会</td>
                 <td>広報かすが94号発行</td>
               </tr>
-              <tr><td>12</td><td>運営委員会</td><td></td></tr>
-              <tr><td>19</td><td>春日小学校夏祭り</td><td>協力</td></tr>
+              <tr><td class="date-cell">12</td><td>運営委員会</td><td></td></tr>
+              <tr><td class="date-cell">19</td><td>春日小学校夏祭り</td><td>協力</td></tr>
 
               <!-- 8月 (1行) -->
               <tr>
-                <td>8月</td>
-                <td>1</td>
+                <td class="month-cell">8月</td>
+                <td class="date-cell">1</td>
                 <td>市印刷物連絡文書仕分配布・役員事務連絡</td>
                 <td></td>
               </tr>
 
               <!-- 9月 (4行) -->
               <tr>
-                <td rowspan="4">9月</td>
-                <td>13</td>
+                <td rowspan="4" class="month-cell">9月</td>
+                <td class="date-cell">13</td>
                 <td>運営委員会・課題検討会</td>
                 <td></td>
               </tr>
-              <tr><td>16</td><td>第2回校区代表者会議</td><td></td></tr>
-              <tr><td>21〜30</td><td>秋の全国交通安全運動</td><td></td></tr>
-              <tr><td>26</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
+              <tr><td class="date-cell">16</td><td>第2回校区代表者会議</td><td></td></tr>
+              <tr><td class="date-cell">21〜30</td><td>秋の全国交通安全運動</td><td></td></tr>
+              <tr><td class="date-cell">26</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
 
               <!-- 10月 (4行) -->
               <tr>
-                <td rowspan="4">10月</td>
-                <td>—</td>
+                <td rowspan="4" class="month-cell">10月</td>
+                <td class="date-cell">—</td>
                 <td>東香里中学校文化祭</td>
                 <td></td>
               </tr>
-              <tr><td>10</td><td>小学校　運動会</td><td></td></tr>
-              <tr><td>11</td><td>運営委員会</td><td></td></tr>
-              <tr><td>31</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
+              <tr><td class="date-cell">10</td><td>小学校　運動会</td><td></td></tr>
+              <tr><td class="date-cell">11</td><td>運営委員会</td><td></td></tr>
+              <tr><td class="date-cell">31</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
 
               <!-- 11月 (4行) -->
               <tr>
-                <td rowspan="4">11月</td>
-                <td>8</td>
+                <td rowspan="4" class="month-cell">11月</td>
+                <td class="date-cell">8</td>
                 <td>広報委員会</td>
                 <td>広報かすが95号発行</td>
               </tr>
-              <tr><td>8</td><td>運営委員会</td><td></td></tr>
-              <tr><td>21</td><td>校区行事　防災訓練</td><td></td></tr>
-              <tr><td>28</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
+              <tr><td class="date-cell">8</td><td>運営委員会</td><td></td></tr>
+              <tr><td class="date-cell">21</td><td>校区行事　防災訓練</td><td></td></tr>
+              <tr><td class="date-cell">28</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
 
               <!-- 12月 (4行) -->
               <tr>
-                <td rowspan="4">12月</td>
-                <td>13</td>
+                <td rowspan="4" class="month-cell">12月</td>
+                <td class="date-cell">13</td>
                 <td>運営委員会</td>
                 <td></td>
               </tr>
-              <tr><td>16</td><td>第3回校区代表者会議</td><td></td></tr>
-              <tr><td>—</td><td>年末夜警パトロール</td><td>各自治会で実施</td></tr>
-              <tr><td>26</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
+              <tr><td class="date-cell">16</td><td>第3回校区代表者会議</td><td></td></tr>
+              <tr><td class="date-cell">—</td><td>年末夜警パトロール</td><td>各自治会で実施</td></tr>
+              <tr><td class="date-cell">26</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
 
               <!-- 1月 (2行) -->
               <tr>
-                <td rowspan="2">1月</td>
-                <td>17</td>
+                <td rowspan="2" class="month-cell">1月</td>
+                <td class="date-cell">17</td>
                 <td>校区コミュニティ協議会互礼会</td>
                 <td></td>
               </tr>
-              <tr><td>30</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
+              <tr><td class="date-cell">30</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
 
               <!-- 2月 (2行) -->
               <tr>
-                <td rowspan="2">2月</td>
-                <td>14</td>
+                <td rowspan="2" class="month-cell">2月</td>
+                <td class="date-cell">14</td>
                 <td>運営委員会・課題検討会</td>
                 <td></td>
               </tr>
-              <tr><td>27</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
+              <tr><td class="date-cell">27</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
 
               <!-- 3月 (6行) -->
               <tr>
-                <td rowspan="6">3月</td>
-                <td>12</td>
+                <td rowspan="6" class="month-cell">3月</td>
+                <td class="date-cell">12</td>
                 <td>東香里中学校卒業式</td>
                 <td></td>
               </tr>
-              <tr><td>14</td><td>広報委員会</td><td>広報かすが96号発行</td></tr>
-              <tr><td>14</td><td>運営委員会</td><td></td></tr>
-              <tr><td>17</td><td>小学校卒業式</td><td></td></tr>
-              <tr><td>21</td><td>第4回校区代表者会議</td><td></td></tr>
-              <tr><td>27</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
+              <tr><td class="date-cell">14</td><td>広報委員会</td><td>広報かすが96号発行</td></tr>
+              <tr><td class="date-cell">14</td><td>運営委員会</td><td></td></tr>
+              <tr><td class="date-cell">17</td><td>小学校卒業式</td><td></td></tr>
+              <tr><td class="date-cell">21</td><td>第4回校区代表者会議</td><td></td></tr>
+              <tr><td class="date-cell">27</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
             </tbody>
           </table>
         </div>
@@ -289,137 +289,137 @@
             <tbody>
               <!-- 4月 (5行) -->
               <tr>
-                <td rowspan="5">4月</td>
-                <td>4</td>
+                <td rowspan="5" class="month-cell">4月</td>
+                <td class="date-cell">4</td>
                 <td>小学唱歌を歌う会（中止）</td>
                 <td></td>
               </tr>
-              <tr><td>4</td><td>定例会</td><td></td></tr>
-              <tr><td>14</td><td>四役会議</td><td></td></tr>
-              <tr><td>17</td><td>子育てサロン</td><td></td></tr>
-              <tr><td>24</td><td>合同総会・総会資料作成</td><td></td></tr>
+              <tr><td class="date-cell">4</td><td>定例会</td><td></td></tr>
+              <tr><td class="date-cell">14</td><td>四役会議</td><td></td></tr>
+              <tr><td class="date-cell">17</td><td>子育てサロン</td><td></td></tr>
+              <tr><td class="date-cell">24</td><td>合同総会・総会資料作成</td><td></td></tr>
 
               <!-- 5月 (5行) -->
               <tr>
-                <td rowspan="5">5月</td>
-                <td>2</td>
+                <td rowspan="5" class="month-cell">5月</td>
+                <td class="date-cell">2</td>
                 <td>小学唱歌を歌う会</td>
                 <td></td>
               </tr>
-              <tr><td>2</td><td>定例会</td><td></td></tr>
-              <tr><td>10</td><td>合同総会</td><td></td></tr>
-              <tr><td>18</td><td>《校福協》代表者会議</td><td></td></tr>
-              <tr><td>27</td><td>常任福祉委員会・元気づくり地域づくり会議</td><td></td></tr>
+              <tr><td class="date-cell">2</td><td>定例会</td><td></td></tr>
+              <tr><td class="date-cell">10</td><td>合同総会</td><td></td></tr>
+              <tr><td class="date-cell">18</td><td>《校福協》代表者会議</td><td></td></tr>
+              <tr><td class="date-cell">27</td><td>常任福祉委員会・元気づくり地域づくり会議</td><td></td></tr>
 
               <!-- 6月 (4行) -->
               <tr>
-                <td rowspan="4">6月</td>
-                <td>6</td>
+                <td rowspan="4" class="month-cell">6月</td>
+                <td class="date-cell">6</td>
                 <td>小学唱歌を歌う会</td>
                 <td></td>
               </tr>
-              <tr><td>6</td><td>定例会</td><td></td></tr>
-              <tr><td>7</td><td>ふれあいグラウンドゴルフ</td><td></td></tr>
-              <tr><td>24</td><td>ひとり暮らし・昼間ひとり在宅高齢者の集い</td><td>※茄子作公民館・春日丘自治会館に分かれて実施</td></tr>
+              <tr><td class="date-cell">6</td><td>定例会</td><td></td></tr>
+              <tr><td class="date-cell">7</td><td>ふれあいグラウンドゴルフ</td><td></td></tr>
+              <tr><td class="date-cell">24</td><td>ひとり暮らし・昼間ひとり在宅高齢者の集い</td><td>※茄子作公民館・春日丘自治会館に分かれて実施</td></tr>
 
               <!-- 7月 (4行) -->
               <tr>
-                <td rowspan="4">7月</td>
-                <td>4</td>
+                <td rowspan="4" class="month-cell">7月</td>
+                <td class="date-cell">4</td>
                 <td>（広報かすが）94号発行</td>
                 <td></td>
               </tr>
-              <tr><td>4</td><td>小学唱歌を歌う会</td><td></td></tr>
-              <tr><td>4</td><td>定例会</td><td></td></tr>
-              <tr><td>22</td><td>常任福祉委員会・元気づくり地域づくり会議</td><td></td></tr>
+              <tr><td class="date-cell">4</td><td>小学唱歌を歌う会</td><td></td></tr>
+              <tr><td class="date-cell">4</td><td>定例会</td><td></td></tr>
+              <tr><td class="date-cell">22</td><td>常任福祉委員会・元気づくり地域づくり会議</td><td></td></tr>
 
               <!-- 8月 (1行) -->
               <tr>
-                <td>8月</td>
-                <td>21</td>
+                <td class="month-cell">8月</td>
+                <td class="date-cell">21</td>
                 <td>子育てサロン</td>
                 <td></td>
               </tr>
 
               <!-- 9月 (4行) -->
               <tr>
-                <td rowspan="4">9月</td>
-                <td>5</td>
+                <td rowspan="4" class="month-cell">9月</td>
+                <td class="date-cell">5</td>
                 <td>ひとり在宅高齢者訪問</td>
                 <td>9〜10月中に訪問</td>
               </tr>
-              <tr><td>5</td><td>小学唱歌を歌う会</td><td></td></tr>
-              <tr><td>5</td><td>定例会</td><td></td></tr>
-              <tr><td>30</td><td>常任福祉委員会</td><td></td></tr>
+              <tr><td class="date-cell">5</td><td>小学唱歌を歌う会</td><td></td></tr>
+              <tr><td class="date-cell">5</td><td>定例会</td><td></td></tr>
+              <tr><td class="date-cell">30</td><td>常任福祉委員会</td><td></td></tr>
 
               <!-- 10月 (4行) -->
               <tr>
-                <td rowspan="4">10月</td>
-                <td>3</td>
+                <td rowspan="4" class="month-cell">10月</td>
+                <td class="date-cell">3</td>
                 <td>小学唱歌を歌う会</td>
                 <td></td>
               </tr>
-              <tr><td>3</td><td>定例会</td><td></td></tr>
-              <tr><td>3</td><td>子育てサロン</td><td></td></tr>
-              <tr><td>16</td><td>茄子作自治会文化祭</td><td>校区福祉委員会共催</td></tr>
+              <tr><td class="date-cell">3</td><td>定例会</td><td></td></tr>
+              <tr><td class="date-cell">3</td><td>子育てサロン</td><td></td></tr>
+              <tr><td class="date-cell">16</td><td>茄子作自治会文化祭</td><td>校区福祉委員会共催</td></tr>
 
               <!-- 11月 (5行) -->
               <tr>
-                <td rowspan="5">11月</td>
-                <td>1</td>
+                <td rowspan="5" class="month-cell">11月</td>
+                <td class="date-cell">1</td>
                 <td>ふれあいグラウンドゴルフ</td>
                 <td></td>
               </tr>
-              <tr><td>7</td><td>小学唱歌を歌う会</td><td></td></tr>
-              <tr><td>7</td><td>定例会</td><td></td></tr>
-              <tr><td>25</td><td>常任福祉委員会・元気づくり地域づくり会議</td><td></td></tr>
-              <tr><td>25</td><td>ひとり暮らし・昼間ひとり在宅高齢者の集い</td><td>※茄子作公民館・春日丘自治会館に分かれて実施</td></tr>
+              <tr><td class="date-cell">7</td><td>小学唱歌を歌う会</td><td></td></tr>
+              <tr><td class="date-cell">7</td><td>定例会</td><td></td></tr>
+              <tr><td class="date-cell">25</td><td>常任福祉委員会・元気づくり地域づくり会議</td><td></td></tr>
+              <tr><td class="date-cell">25</td><td>ひとり暮らし・昼間ひとり在宅高齢者の集い</td><td>※茄子作公民館・春日丘自治会館に分かれて実施</td></tr>
 
               <!-- 12月 (6行) -->
               <tr>
-                <td rowspan="6">12月</td>
-                <td>1</td>
+                <td rowspan="6" class="month-cell">12月</td>
+                <td class="date-cell">1</td>
                 <td>（広報かすが）95号発行</td>
                 <td></td>
               </tr>
-              <tr><td>5</td><td>元気づくり・地域づくり会議研修（グループワーク）</td><td></td></tr>
-              <tr><td>5</td><td>定例会</td><td></td></tr>
-              <tr><td>5</td><td>小学唱歌を歌う会</td><td></td></tr>
-              <tr><td>18</td><td>子育てサロン</td><td></td></tr>
-              <tr><td>18</td><td>《校福協》代表者会議</td><td></td></tr>
+              <tr><td class="date-cell">5</td><td>元気づくり・地域づくり会議研修（グループワーク）</td><td></td></tr>
+              <tr><td class="date-cell">5</td><td>定例会</td><td></td></tr>
+              <tr><td class="date-cell">5</td><td>小学唱歌を歌う会</td><td></td></tr>
+              <tr><td class="date-cell">18</td><td>子育てサロン</td><td></td></tr>
+              <tr><td class="date-cell">18</td><td>《校福協》代表者会議</td><td></td></tr>
 
               <!-- 1月 (3行) -->
               <tr>
-                <td rowspan="3">1月</td>
-                <td>6</td>
+                <td rowspan="3" class="month-cell">1月</td>
+                <td class="date-cell">6</td>
                 <td>小学唱歌を歌う会</td>
                 <td></td>
               </tr>
-              <tr><td>6</td><td>定例会</td><td></td></tr>
-              <tr><td>19</td><td>子育てサロン</td><td></td></tr>
+              <tr><td class="date-cell">6</td><td>定例会</td><td></td></tr>
+              <tr><td class="date-cell">19</td><td>子育てサロン</td><td></td></tr>
 
               <!-- 2月 (5行) -->
               <tr>
-                <td rowspan="5">2月</td>
-                <td>6</td>
+                <td rowspan="5" class="month-cell">2月</td>
+                <td class="date-cell">6</td>
                 <td>（広報かすが）96号発行</td>
                 <td></td>
               </tr>
-              <tr><td>6</td><td>小学唱歌を歌う会</td><td></td></tr>
-              <tr><td>6</td><td>定例会</td><td></td></tr>
-              <tr><td>24</td><td>ひとり在宅高齢者訪問・ひとり暮らし・昼間ひとり在宅高齢者の集い</td><td>茄子作公民館・春日丘自治会館に分かれて実施</td></tr>
-              <tr><td>24</td><td>常任福祉委員会・元気づくり地域づくり会議・《校福協》代表者会議</td><td></td></tr>
+              <tr><td class="date-cell">6</td><td>小学唱歌を歌う会</td><td></td></tr>
+              <tr><td class="date-cell">6</td><td>定例会</td><td></td></tr>
+              <tr><td class="date-cell">24</td><td>ひとり在宅高齢者訪問・ひとり暮らし・昼間ひとり在宅高齢者の集い</td><td>茄子作公民館・春日丘自治会館に分かれて実施</td></tr>
+              <tr><td class="date-cell">24</td><td>常任福祉委員会・元気づくり地域づくり会議・《校福協》代表者会議</td><td></td></tr>
 
               <!-- 3月 (4行) -->
               <tr>
-                <td rowspan="4">3月</td>
-                <td>6</td>
+                <td rowspan="4" class="month-cell">3月</td>
+                <td class="date-cell">6</td>
                 <td>小学唱歌を歌う会</td>
                 <td></td>
               </tr>
-              <tr><td>6</td><td>定例会</td><td></td></tr>
-              <tr><td>24</td><td>ひとり暮らし・昼間ひとり在宅高齢者の集い</td><td>茄子作公民館・春日丘自治会館に分かれて実施</td></tr>
-              <tr><td>24</td><td>常任福祉委員会・元気づくり地域づくり会議・《校福協》代表者会議</td><td></td></tr>
+              <tr><td class="date-cell">6</td><td>定例会</td><td></td></tr>
+              <tr><td class="date-cell">24</td><td>ひとり暮らし・昼間ひとり在宅高齢者の集い</td><td>茄子作公民館・春日丘自治会館に分かれて実施</td></tr>
+              <tr><td class="date-cell">24</td><td>常任福祉委員会・元気づくり地域づくり会議・《校福協》代表者会議</td><td></td></tr>
             </tbody>
           </table>
         </div>
@@ -446,83 +446,83 @@
             <tbody>
               <!-- 4月 (2行) -->
               <tr>
-                <td rowspan="2">4月</td>
-                <td>12</td>
+                <td rowspan="2" class="month-cell">4月</td>
+                <td class="date-cell">12</td>
                 <td>代表者会議</td>
                 <td></td>
               </tr>
-              <tr><td>6〜15</td><td>春の交通安全運動</td><td></td></tr>
+              <tr><td class="date-cell">6〜15</td><td>春の交通安全運動</td><td></td></tr>
 
               <!-- 5月 (2行) -->
               <tr>
-                <td rowspan="2">5月</td>
-                <td>10</td>
+                <td rowspan="2" class="month-cell">5月</td>
+                <td class="date-cell">10</td>
                 <td>合同総会</td>
                 <td>コミュニティ協議会・福祉委員会・自主防災会</td>
               </tr>
-              <tr><td>25</td><td>総会資料作成・配布</td><td></td></tr>
+              <tr><td class="date-cell">25</td><td>総会資料作成・配布</td><td></td></tr>
 
               <!-- 6月 (1行) -->
               <tr>
-                <td>6月</td>
-                <td>—</td>
+                <td class="month-cell">6月</td>
+                <td class="date-cell">—</td>
                 <td>自主防災会</td>
                 <td></td>
               </tr>
 
               <!-- 7月 (1行) -->
               <tr>
-                <td>7月</td>
-                <td>12</td>
+                <td class="month-cell">7月</td>
+                <td class="date-cell">12</td>
                 <td>自主防災会</td>
                 <td></td>
               </tr>
 
               <!-- 9月 (1行) -->
               <tr>
-                <td>9月</td>
-                <td>21〜30</td>
+                <td class="month-cell">9月</td>
+                <td class="date-cell">21〜30</td>
                 <td>秋の交通安全運動</td>
                 <td></td>
               </tr>
 
               <!-- 10月 (1行) -->
               <tr>
-                <td>10月</td>
-                <td>11</td>
+                <td class="month-cell">10月</td>
+                <td class="date-cell">11</td>
                 <td>自主防災会</td>
                 <td></td>
               </tr>
 
               <!-- 11月 (2行) -->
               <tr>
-                <td rowspan="2">11月</td>
-                <td>8</td>
+                <td rowspan="2" class="month-cell">11月</td>
+                <td class="date-cell">8</td>
                 <td>自主防災会</td>
                 <td></td>
               </tr>
-              <tr><td>21</td><td>防災訓練</td><td></td></tr>
+              <tr><td class="date-cell">21</td><td>防災訓練</td><td></td></tr>
 
               <!-- 12月 (1行) -->
               <tr>
-                <td>12月</td>
-                <td>13</td>
+                <td class="month-cell">12月</td>
+                <td class="date-cell">13</td>
                 <td>自主防災会</td>
                 <td></td>
               </tr>
 
               <!-- 1月 (1行) -->
               <tr>
-                <td>1月</td>
-                <td>17</td>
+                <td class="month-cell">1月</td>
+                <td class="date-cell">17</td>
                 <td>校区コミュニティ協議会互礼会</td>
                 <td></td>
               </tr>
 
               <!-- 2月 (1行) -->
               <tr>
-                <td>2月</td>
-                <td>14</td>
+                <td class="month-cell">2月</td>
+                <td class="date-cell">14</td>
                 <td>自主防災会</td>
                 <td></td>
               </tr>
