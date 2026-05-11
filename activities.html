@@ -8,6 +8,66 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── タブ ── */
+    .plan-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .plan-tab-btn {
+      padding: 9px 28px;
+      border-radius: 24px;
+      border: 2px solid var(--border);
+      background: white;
+      color: var(--text-light);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--font);
+      transition: all var(--transition);
+    }
+    .plan-tab-btn.active,
+    .plan-tab-btn:hover {
+      border-color: var(--primary);
+      background: var(--primary);
+      color: white;
+    }
+    .plan-tab-content { display: none; }
+    .plan-tab-content.active { display: block; }
+
+    /* ── スケジュール表 ── */
+    .schedule-table td:first-child {
+      font-weight: 700;
+      text-align: center;
+      white-space: nowrap;
+      color: var(--primary-dark);
+      background: var(--primary-pale) !important;
+      vertical-align: middle;
+    }
+    .schedule-table td:nth-child(2) {
+      text-align: center;
+      white-space: nowrap;
+      font-size: 0.87rem;
+      color: var(--text-muted);
+    }
+    .schedule-table td:nth-child(4) {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+
+    /* ── 注記ボックス ── */
+    .note-box {
+      background: var(--primary-pale);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 0.87rem;
+      color: var(--text-light);
+      line-height: 1.9;
+    }
+  </style>
 </head>
 <body>
 
@@ -37,169 +97,379 @@
   <div class="container">
     <div class="breadcrumb"><a href="index.html">ホーム</a><span>›</span>活動情報</div>
     <h1>活動情報</h1>
-    <p>年間活動計画・活動報告・行事カレンダー</p>
+    <p>2026年度 年間活動計画・行事スケジュール</p>
   </div>
 </div>
 
-<!-- ── 年間活動計画 ── -->
+<!-- ── 年間事業計画 ── -->
 <section class="section">
   <div class="container">
     <div class="section-head">
-      <h2 class="section-title">令和8年度 年間活動計画</h2>
-      <p class="section-desc">※実際の日程は変更になる場合があります。詳細はお知らせをご確認ください。</p>
+      <h2 class="section-title">2026年度 年間事業計画（案）</h2>
+      <p class="section-desc">※日程は変更になる場合があります。最新情報はお知らせをご確認ください。</p>
     </div>
 
     <div class="alert alert-info">
       📋 各行事の詳細・変更については、自治会の回覧板またはこのサイトのお知らせをご確認ください。
     </div>
 
-    <div class="card">
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th style="width:80px;">月</th>
-              <th>主な行事・活動</th>
-              <th style="width:140px;">担当</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>4月</strong></td>
-              <td>令和8年度 定期総会／新年度役員紹介／活動計画説明</td>
-              <td><span class="tag tag-info">協議会</span></td>
-            </tr>
-            <tr>
-              <td><strong>5月</strong></td>
-              <td>春季クリーンキャンペーン（地域清掃）／交通安全啓発活動</td>
-              <td><span class="tag tag-notice">各団体</span></td>
-            </tr>
-            <tr>
-              <td><strong>6月</strong></td>
-              <td>防犯パトロール強化月間／見守り活動研修</td>
-              <td><span class="tag tag-notice">各団体</span></td>
-            </tr>
-            <tr>
-              <td><strong>7月</strong></td>
-              <td>夏まつり・盆踊り大会／青少年健全育成活動（夏休み）</td>
-              <td><span class="tag tag-event">行事</span></td>
-            </tr>
-            <tr>
-              <td><strong>8月</strong></td>
-              <td>防災訓練（避難訓練・応急救護訓練）／夏季パトロール</td>
-              <td><span class="tag tag-info">協議会</span></td>
-            </tr>
-            <tr>
-              <td><strong>9月</strong></td>
-              <td>敬老のつどい／老人会交流イベント</td>
-              <td><span class="tag tag-event">行事</span></td>
-            </tr>
-            <tr>
-              <td><strong>10月</strong></td>
-              <td>地域スポーツ大会（体育振興会主催）／秋季クリーンキャンペーン</td>
-              <td><span class="tag tag-notice">各団体</span></td>
-            </tr>
-            <tr>
-              <td><strong>11月</strong></td>
-              <td>ふれあい秋まつり／文化・芸術交流行事／防火・防災意識啓発</td>
-              <td><span class="tag tag-event">行事</span></td>
-            </tr>
-            <tr>
-              <td><strong>12月</strong></td>
-              <td>年末夜間パトロール／交通安全街頭啓発／歳末助け合い運動</td>
-              <td><span class="tag tag-notice">各団体</span></td>
-            </tr>
-            <tr>
-              <td><strong>1月</strong></td>
-              <td>新春つどい（新年会）／防災・防犯活動の振り返り</td>
-              <td><span class="tag tag-info">協議会</span></td>
-            </tr>
-            <tr>
-              <td><strong>2月</strong></td>
-              <td>地域福祉活動報告会／子ども会冬季行事</td>
-              <td><span class="tag tag-notice">各団体</span></td>
-            </tr>
-            <tr>
-              <td><strong>3月</strong></td>
-              <td>年度末総括会議／活動報告書作成・配布／次年度計画準備</td>
-              <td><span class="tag tag-info">協議会</span></td>
-            </tr>
-          </tbody>
-        </table>
+    <!-- タブ切り替え -->
+    <div class="plan-tabs" role="group" aria-label="団体切り替え">
+      <button class="plan-tab-btn active" data-tab="community">🏛️ コミュニティ協議会</button>
+      <button class="plan-tab-btn" data-tab="welfare">❤️ 福祉委員会</button>
+    </div>
+
+    <!-- ── コミュニティ協議会 ── -->
+    <div class="plan-tab-content active" id="tab-community">
+      <div class="card">
+        <div class="table-wrap">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th style="width:60px;">月</th>
+                <th style="width:65px;">日</th>
+                <th>事業名</th>
+                <th style="width:190px;">備考</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 4月 (6行) -->
+              <tr>
+                <td rowspan="6">4月</td>
+                <td>6</td>
+                <td>春日小学校入学式</td>
+                <td></td>
+              </tr>
+              <tr><td>6</td><td>民生委員委嘱状交付式</td><td></td></tr>
+              <tr><td>7</td><td>東香里中学校入学式</td><td></td></tr>
+              <tr><td>6〜15</td><td>春の全国交通安全運動（立ち番 8日〜15日）</td><td></td></tr>
+              <tr><td>12</td><td>自治会長各種団体代表者会議</td><td></td></tr>
+              <tr><td>25</td><td>総会資料作成・配布</td><td></td></tr>
+
+              <!-- 5月 (4行) -->
+              <tr>
+                <td rowspan="4">5月</td>
+                <td>2</td>
+                <td>市印刷物連絡文書仕分配布・役員事務連絡</td>
+                <td></td>
+              </tr>
+              <tr><td>10</td><td>合同総会</td><td>コミュニティ協議会・福祉委員会・自主防災会</td></tr>
+              <tr><td>20</td><td>第1回校区代表者会議</td><td></td></tr>
+              <tr><td>30</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
+
+              <!-- 6月 (5行) -->
+              <tr>
+                <td rowspan="5">6月</td>
+                <td>4</td>
+                <td>東香里中学校体育祭</td>
+                <td></td>
+              </tr>
+              <tr><td>—</td><td>校区子ども会行事</td><td>校区こども会交流会</td></tr>
+              <tr><td>14</td><td>運営委員会・課題検討会</td><td></td></tr>
+              <tr><td>21</td><td>コミュニティ連絡協議会総会</td><td></td></tr>
+              <tr><td>27</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
+
+              <!-- 7月 (3行) -->
+              <tr>
+                <td rowspan="3">7月</td>
+                <td>12</td>
+                <td>広報委員会</td>
+                <td>広報かすが94号発行</td>
+              </tr>
+              <tr><td>12</td><td>運営委員会</td><td></td></tr>
+              <tr><td>19</td><td>春日小学校夏祭り</td><td>協力</td></tr>
+
+              <!-- 8月 (1行) -->
+              <tr>
+                <td>8月</td>
+                <td>1</td>
+                <td>市印刷物連絡文書仕分配布・役員事務連絡</td>
+                <td></td>
+              </tr>
+
+              <!-- 9月 (4行) -->
+              <tr>
+                <td rowspan="4">9月</td>
+                <td>13</td>
+                <td>運営委員会・課題検討会</td>
+                <td></td>
+              </tr>
+              <tr><td>16</td><td>第2回校区代表者会議</td><td></td></tr>
+              <tr><td>21〜30</td><td>秋の全国交通安全運動</td><td></td></tr>
+              <tr><td>26</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
+
+              <!-- 10月 (4行) -->
+              <tr>
+                <td rowspan="4">10月</td>
+                <td>—</td>
+                <td>東香里中学校文化祭</td>
+                <td></td>
+              </tr>
+              <tr><td>10</td><td>小学校　運動会</td><td></td></tr>
+              <tr><td>11</td><td>運営委員会</td><td></td></tr>
+              <tr><td>31</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
+
+              <!-- 11月 (4行) -->
+              <tr>
+                <td rowspan="4">11月</td>
+                <td>8</td>
+                <td>広報委員会</td>
+                <td>広報かすが95号発行</td>
+              </tr>
+              <tr><td>8</td><td>運営委員会</td><td></td></tr>
+              <tr><td>21</td><td>校区行事　防災訓練</td><td></td></tr>
+              <tr><td>28</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
+
+              <!-- 12月 (4行) -->
+              <tr>
+                <td rowspan="4">12月</td>
+                <td>13</td>
+                <td>運営委員会</td>
+                <td></td>
+              </tr>
+              <tr><td>16</td><td>第3回校区代表者会議</td><td></td></tr>
+              <tr><td>—</td><td>年末夜警パトロール</td><td>各自治会で実施</td></tr>
+              <tr><td>26</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
+
+              <!-- 1月 (2行) -->
+              <tr>
+                <td rowspan="2">1月</td>
+                <td>17</td>
+                <td>校区コミュニティ協議会互礼会</td>
+                <td></td>
+              </tr>
+              <tr><td>30</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
+
+              <!-- 2月 (2行) -->
+              <tr>
+                <td rowspan="2">2月</td>
+                <td>14</td>
+                <td>運営委員会・課題検討会</td>
+                <td></td>
+              </tr>
+              <tr><td>27</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
+
+              <!-- 3月 (6行) -->
+              <tr>
+                <td rowspan="6">3月</td>
+                <td>12</td>
+                <td>東香里中学校卒業式</td>
+                <td></td>
+              </tr>
+              <tr><td>14</td><td>広報委員会</td><td>広報かすが96号発行</td></tr>
+              <tr><td>14</td><td>運営委員会</td><td></td></tr>
+              <tr><td>17</td><td>小学校卒業式</td><td></td></tr>
+              <tr><td>21</td><td>第4回校区代表者会議</td><td></td></tr>
+              <tr><td>27</td><td>市印刷物連絡文書仕分配布・役員事務連絡</td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note-box">
+          📌 <strong>定例事項</strong><br>
+          ・運営委員会：基本毎月第2日曜開催（8月・1月休み）<br>
+          ・市印刷物連絡文書仕分配布：第4火曜日の次の土曜日。その後、役員会（情報交換）
+        </div>
       </div>
     </div>
+
+    <!-- ── 福祉委員会 ── -->
+    <div class="plan-tab-content" id="tab-welfare">
+      <div class="card">
+        <div class="table-wrap">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th style="width:60px;">月</th>
+                <th style="width:65px;">日</th>
+                <th>活動事業名</th>
+                <th style="width:190px;">備考</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 4月 (5行) -->
+              <tr>
+                <td rowspan="5">4月</td>
+                <td>4</td>
+                <td>小学唱歌を歌う会（中止）</td>
+                <td></td>
+              </tr>
+              <tr><td>4</td><td>定例会</td><td></td></tr>
+              <tr><td>14</td><td>四役会議</td><td></td></tr>
+              <tr><td>17</td><td>子育てサロン</td><td></td></tr>
+              <tr><td>24</td><td>合同総会・総会資料作成</td><td></td></tr>
+
+              <!-- 5月 (5行) -->
+              <tr>
+                <td rowspan="5">5月</td>
+                <td>2</td>
+                <td>小学唱歌を歌う会</td>
+                <td></td>
+              </tr>
+              <tr><td>2</td><td>定例会</td><td></td></tr>
+              <tr><td>10</td><td>合同総会</td><td></td></tr>
+              <tr><td>18</td><td>《校福協》代表者会議</td><td></td></tr>
+              <tr><td>27</td><td>常任福祉委員会・元気づくり地域づくり会議</td><td></td></tr>
+
+              <!-- 6月 (4行) -->
+              <tr>
+                <td rowspan="4">6月</td>
+                <td>6</td>
+                <td>小学唱歌を歌う会</td>
+                <td></td>
+              </tr>
+              <tr><td>6</td><td>定例会</td><td></td></tr>
+              <tr><td>7</td><td>ふれあいグラウンドゴルフ</td><td></td></tr>
+              <tr><td>24</td><td>ひとり暮らし・昼間ひとり在宅高齢者の集い</td><td>※茄子作公民館・春日丘自治会館に分かれて実施</td></tr>
+
+              <!-- 7月 (4行) -->
+              <tr>
+                <td rowspan="4">7月</td>
+                <td>4</td>
+                <td>（広報かすが）94号発行</td>
+                <td></td>
+              </tr>
+              <tr><td>4</td><td>小学唱歌を歌う会</td><td></td></tr>
+              <tr><td>4</td><td>定例会</td><td></td></tr>
+              <tr><td>22</td><td>常任福祉委員会・元気づくり地域づくり会議</td><td></td></tr>
+
+              <!-- 8月 (1行) -->
+              <tr>
+                <td>8月</td>
+                <td>21</td>
+                <td>子育てサロン</td>
+                <td></td>
+              </tr>
+
+              <!-- 9月 (4行) -->
+              <tr>
+                <td rowspan="4">9月</td>
+                <td>5</td>
+                <td>ひとり在宅高齢者訪問</td>
+                <td>9〜10月中に訪問</td>
+              </tr>
+              <tr><td>5</td><td>小学唱歌を歌う会</td><td></td></tr>
+              <tr><td>5</td><td>定例会</td><td></td></tr>
+              <tr><td>30</td><td>常任福祉委員会</td><td></td></tr>
+
+              <!-- 10月 (4行) -->
+              <tr>
+                <td rowspan="4">10月</td>
+                <td>3</td>
+                <td>小学唱歌を歌う会</td>
+                <td></td>
+              </tr>
+              <tr><td>3</td><td>定例会</td><td></td></tr>
+              <tr><td>3</td><td>子育てサロン</td><td></td></tr>
+              <tr><td>16</td><td>茄子作自治会文化祭</td><td>校区福祉委員会共催</td></tr>
+
+              <!-- 11月 (5行) -->
+              <tr>
+                <td rowspan="5">11月</td>
+                <td>1</td>
+                <td>ふれあいグラウンドゴルフ</td>
+                <td></td>
+              </tr>
+              <tr><td>7</td><td>小学唱歌を歌う会</td><td></td></tr>
+              <tr><td>7</td><td>定例会</td><td></td></tr>
+              <tr><td>25</td><td>常任福祉委員会・元気づくり地域づくり会議</td><td></td></tr>
+              <tr><td>25</td><td>ひとり暮らし・昼間ひとり在宅高齢者の集い</td><td>※茄子作公民館・春日丘自治会館に分かれて実施</td></tr>
+
+              <!-- 12月 (6行) -->
+              <tr>
+                <td rowspan="6">12月</td>
+                <td>1</td>
+                <td>（広報かすが）95号発行</td>
+                <td></td>
+              </tr>
+              <tr><td>5</td><td>元気づくり・地域づくり会議研修（グループワーク）</td><td></td></tr>
+              <tr><td>5</td><td>定例会</td><td></td></tr>
+              <tr><td>5</td><td>小学唱歌を歌う会</td><td></td></tr>
+              <tr><td>18</td><td>子育てサロン</td><td></td></tr>
+              <tr><td>18</td><td>《校福協》代表者会議</td><td></td></tr>
+
+              <!-- 1月 (3行) -->
+              <tr>
+                <td rowspan="3">1月</td>
+                <td>6</td>
+                <td>小学唱歌を歌う会</td>
+                <td></td>
+              </tr>
+              <tr><td>6</td><td>定例会</td><td></td></tr>
+              <tr><td>19</td><td>子育てサロン</td><td></td></tr>
+
+              <!-- 2月 (5行) -->
+              <tr>
+                <td rowspan="5">2月</td>
+                <td>6</td>
+                <td>（広報かすが）96号発行</td>
+                <td></td>
+              </tr>
+              <tr><td>6</td><td>小学唱歌を歌う会</td><td></td></tr>
+              <tr><td>6</td><td>定例会</td><td></td></tr>
+              <tr><td>24</td><td>ひとり在宅高齢者訪問・ひとり暮らし・昼間ひとり在宅高齢者の集い</td><td>茄子作公民館・春日丘自治会館に分かれて実施</td></tr>
+              <tr><td>24</td><td>常任福祉委員会・元気づくり地域づくり会議・《校福協》代表者会議</td><td></td></tr>
+
+              <!-- 3月 (4行) -->
+              <tr>
+                <td rowspan="4">3月</td>
+                <td>6</td>
+                <td>小学唱歌を歌う会</td>
+                <td></td>
+              </tr>
+              <tr><td>6</td><td>定例会</td><td></td></tr>
+              <tr><td>24</td><td>ひとり暮らし・昼間ひとり在宅高齢者の集い</td><td>茄子作公民館・春日丘自治会館に分かれて実施</td></tr>
+              <tr><td>24</td><td>常任福祉委員会・元気づくり地域づくり会議・《校福協》代表者会議</td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note-box">
+          📌 <strong>その他</strong><br>
+          ・《校福協》研修・南エリア会議・研修は開催月日が未定です。
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ── 活動報告 ── -->
+<!-- ── 主な行事 ── -->
 <section class="section section-alt">
   <div class="container">
     <div class="section-head">
-      <h2 class="section-title">最近の活動報告</h2>
-      <p class="section-desc">協議会の活動の様子をご紹介します</p>
-    </div>
-
-    <div class="grid grid-3">
-      <div class="card">
-        <div style="background:var(--primary-pale); border-radius:var(--radius); height:140px; display:flex; align-items:center; justify-content:center; font-size:3rem; margin-bottom:16px;">🌸</div>
-        <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:6px;">2026年4月15日</div>
-        <div style="font-weight:700; color:var(--primary-dark); margin-bottom:8px;">令和8年度 定期総会を開催しました</div>
-        <p style="font-size:0.87rem; color:var(--text-light);">令和8年度の定期総会を開催し、昨年度の活動報告と新年度の活動計画について審議・承認されました。</p>
-      </div>
-      <div class="card">
-        <div style="background:#E8F5E9; border-radius:var(--radius); height:140px; display:flex; align-items:center; justify-content:center; font-size:3rem; margin-bottom:16px;">🧹</div>
-        <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:6px;">2026年3月20日</div>
-        <div style="font-weight:700; color:var(--primary-dark); margin-bottom:8px;">春季クリーンキャンペーンを実施しました</div>
-        <p style="font-size:0.87rem; color:var(--text-light);">区内各所で一斉清掃を行い、多くの地域住民にご参加いただきました。美しいまちづくりへのご協力ありがとうございました。</p>
-      </div>
-      <div class="card">
-        <div style="background:#FFF3E0; border-radius:var(--radius); height:140px; display:flex; align-items:center; justify-content:center; font-size:3rem; margin-bottom:16px;">🛡️</div>
-        <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:6px;">2026年2月11日</div>
-        <div style="font-weight:700; color:var(--primary-dark); margin-bottom:8px;">防災訓練を実施しました</div>
-        <p style="font-size:0.87rem; color:var(--text-light);">自主防災会主催の防災訓練を実施しました。避難経路の確認や応急救護訓練など、実践的な内容で行われました。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── 定期行事 ── -->
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <h2 class="section-title">主な定期行事</h2>
-      <p class="section-desc">毎年開催している主なイベントをご紹介します</p>
+      <h2 class="section-title">主な年間行事</h2>
+      <p class="section-desc">校区コミュニティ協議会の主な行事をご紹介します</p>
     </div>
     <div class="grid grid-2">
       <div class="card" style="display:flex; gap:20px; align-items:flex-start;">
+        <div style="font-size:2.5rem; flex-shrink:0;">🌸</div>
+        <div>
+          <div style="font-weight:700; color:var(--primary-dark); margin-bottom:6px;">合同総会</div>
+          <p style="font-size:0.88rem; color:var(--text-light);">コミュニティ協議会・福祉委員会・自主防災会が合同で総会を開催します。年度の活動計画を審議・承認します。</p>
+          <div style="margin-top:8px;"><span class="tag tag-info">5月10日</span></div>
+        </div>
+      </div>
+      <div class="card" style="display:flex; gap:20px; align-items:flex-start;">
         <div style="font-size:2.5rem; flex-shrink:0;">🎆</div>
         <div>
-          <div style="font-weight:700; color:var(--primary-dark); margin-bottom:6px;">夏まつり・盆踊り大会</div>
-          <p style="font-size:0.88rem; color:var(--text-light);">毎年夏に開催する地域最大のイベント。盆踊りや模擬店など、子どもから大人まで楽しめます。</p>
-          <div style="margin-top:8px;"><span class="tag tag-event">7月〜8月</span></div>
+          <div style="font-weight:700; color:var(--primary-dark); margin-bottom:6px;">春日小学校夏祭り</div>
+          <p style="font-size:0.88rem; color:var(--text-light);">春日小学校夏祭りに協力して参加します。地域の皆さまが楽しめるイベントです。</p>
+          <div style="margin-top:8px;"><span class="tag tag-event">7月19日</span></div>
         </div>
       </div>
       <div class="card" style="display:flex; gap:20px; align-items:flex-start;">
-        <div style="font-size:2.5rem; flex-shrink:0;">🍂</div>
+        <div style="font-size:2.5rem; flex-shrink:0;">🛡️</div>
         <div>
-          <div style="font-weight:700; color:var(--primary-dark); margin-bottom:6px;">ふれあい秋まつり</div>
-          <p style="font-size:0.88rem; color:var(--text-light);">秋に開催する地域交流イベント。文化・芸術の発表の場として、地域の絆を深める機会です。</p>
-          <div style="margin-top:8px;"><span class="tag tag-event">11月</span></div>
+          <div style="font-weight:700; color:var(--primary-dark); margin-bottom:6px;">校区行事　防災訓練</div>
+          <p style="font-size:0.88rem; color:var(--text-light);">校区全体で防災訓練を実施します。避難経路の確認や応急救護訓練など、実践的な内容で行います。</p>
+          <div style="margin-top:8px;"><span class="tag tag-event">11月21日</span></div>
         </div>
       </div>
       <div class="card" style="display:flex; gap:20px; align-items:flex-start;">
-        <div style="font-size:2.5rem; flex-shrink:0;">🏃</div>
+        <div style="font-size:2.5rem; flex-shrink:0;">🚔</div>
         <div>
-          <div style="font-weight:700; color:var(--primary-dark); margin-bottom:6px;">地域スポーツ大会</div>
-          <p style="font-size:0.88rem; color:var(--text-light);">体育振興会主催のスポーツ大会。世代を超えた交流と健康づくりを目的としています。</p>
-          <div style="margin-top:8px;"><span class="tag tag-event">10月</span></div>
-        </div>
-      </div>
-      <div class="card" style="display:flex; gap:20px; align-items:flex-start;">
-        <div style="font-size:2.5rem; flex-shrink:0;">🎖️</div>
-        <div>
-          <div style="font-weight:700; color:var(--primary-dark); margin-bottom:6px;">敬老のつどい</div>
-          <p style="font-size:0.88reen; color:var(--text-light);">地域の高齢者を敬い、長寿をお祝いする行事。毎年9月頃に開催しています。</p>
-          <div style="margin-top:8px;"><span class="tag tag-event">9月</span></div>
+          <div style="font-weight:700; color:var(--primary-dark); margin-bottom:6px;">年末夜警パトロール</div>
+          <p style="font-size:0.88rem; color:var(--text-light);">年末の防犯・防火を目的に、各自治会が連携して夜間パトロールを実施します。</p>
+          <div style="margin-top:8px;"><span class="tag tag-event">12月</span></div>
         </div>
       </div>
     </div>
@@ -224,6 +494,8 @@
           <li><a href="organizations.html">傘下組織</a></li>
           <li><a href="activities.html">活動情報</a></li>
           <li><a href="news.html">お知らせ</a></li>
+          <li><a href="haifubutsu.html">配布物</a></li>
+          <li><a href="kouhou.html">広報誌</a></li>
           <li><a href="contact.html">お問い合わせ</a></li>
         </ul>
       </div>
@@ -241,5 +513,16 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+  // タブ切り替え
+  document.querySelectorAll('.plan-tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.plan-tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      document.querySelectorAll('.plan-tab-content').forEach(function(c) { c.classList.remove('active'); });
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
 </body>
 </html>
