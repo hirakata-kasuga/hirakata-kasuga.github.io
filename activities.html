@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>活動情報 | 春日小学校区コミュニティ協議会</title>
-  <meta name="description" content="春日小学校区コミュニティ協議会の年間活動計画と活動報告をご紹介します。">
+  <title>活動情報 | 春日校区コミュニティ協議会</title>
+  <meta name="description" content="春日校区コミュニティ協議会の年間活動計画と活動報告をご紹介します。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
@@ -67,6 +67,35 @@
       color: var(--text-light);
       line-height: 1.9;
     }
+
+    /* ── Googleカレンダー ── */
+    .calendar-wrap {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 12px;
+      box-shadow: var(--shadow);
+      margin-bottom: 48px;
+    }
+    .calendar-iframe-container {
+      width: 100%;
+      height: 600px;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .calendar-iframe-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    @media (max-width: 768px) {
+      .calendar-wrap {
+        padding: 8px;
+        margin-bottom: 36px;
+      }
+      .calendar-iframe-container {
+        height: 450px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -75,7 +104,7 @@
   <div class="header-inner">
     <a href="index.html" class="site-logo">
       <div class="logo-mark">🌸</div>
-      <div class="logo-text">春日小学校区コミュニティ協議会<small>大阪府枚方市</small></div>
+      <div class="logo-text">春日校区コミュニティ協議会<small>大阪府枚方市</small></div>
     </a>
     <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -101,10 +130,24 @@
   </div>
 </div>
 
-<!-- ── 年間事業計画 ── -->
+<!-- ── 活動情報コンテンツ ── -->
 <section class="section">
   <div class="container">
+
+    <!-- 行事カレンダー -->
     <div class="section-head">
+      <h2 class="section-title">行事カレンダー</h2>
+      <p class="section-desc">直近のスケジュールをカレンダーでご確認いただけます。</p>
+    </div>
+
+    <div class="calendar-wrap">
+      <div class="calendar-iframe-container">
+        <iframe src="https://calendar.google.com/calendar/embed?src=hirakatakasuga%40gmail.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+      </div>
+    </div>
+
+    <!-- 年間事業計画（案） -->
+    <div class="section-head" style="margin-top: 56px;">
       <h2 class="section-title">2026年度 年間事業計画（案）</h2>
       <p class="section-desc">※日程は変更になる場合があります。最新情報はお知らせをご確認ください。</p>
     </div>
@@ -589,7 +632,7 @@
       <div>
         <div class="footer-logo">
           <div class="logo-mark">🌸</div>
-          <div class="footer-site-name">春日小学校区コミュニティ協議会<small>大阪府枚方市</small></div>
+          <div class="footer-site-name">春日校区コミュニティ協議会<small>大阪府枚方市</small></div>
         </div>
         <p class="footer-desc">地域の皆さまが安心して暮らせるまちづくりのため、区内の各自治会・各種団体と連携して活動しています。</p>
       </div>
@@ -614,7 +657,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 春日小学校区コミュニティ協議会 All Rights Reserved.</p>
+      <p>&copy; 2026 春日校区コミュニティ協議会 All Rights Reserved.</p>
     </div>
   </div>
 </footer>

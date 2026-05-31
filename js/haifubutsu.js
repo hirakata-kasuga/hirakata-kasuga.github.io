@@ -104,7 +104,7 @@ function renderDetail(monthKey, items) {
   if (pageHeader) pageHeader.textContent = `${monthLabel}の配布物`;
 
   // ページタイトル更新
-  document.title = `${monthLabel}の配布物 | 配布物・回覧板 | 春日小学校区コミュニティ協議会`;
+  document.title = `${monthLabel}の配布物 | 配布物・回覧板 | 春日校区コミュニティ協議会`;
 
   // パンくずの「詳細」部分を追加
   const bc = document.getElementById('breadcrumbDetail');
