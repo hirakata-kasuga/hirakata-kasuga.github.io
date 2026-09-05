@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hirakata-kasuga.github.io/sitemap.xml
