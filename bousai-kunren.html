@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>校区防災訓練のお知らせ（2026年11月21日） | 春日校区コミュニティ協議会</title>
+  <meta name="description" content="2026年11月21日(土)に春日校区で実施する防災訓練のご案内です。避難所開設訓練、非常食の食べ比べ、避難所設備体験、防災士による防災講座を予定しています。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── 日付ヒーロー ── */
+    .bk-hero {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, var(--primary-light) 100%);
+      color: white;
+      padding: 56px 20px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .bk-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .bk-hero-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+    .bk-hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 4px 18px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      margin-bottom: 18px;
+      letter-spacing: 0.05em;
+    }
+    .bk-hero h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 14px;
+      line-height: 1.45;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+    .bk-hero p { font-size: 1rem; opacity: 0.92; margin-bottom: 28px; }
+    .bk-date-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255,255,255,0.95);
+      color: var(--primary-dark);
+      border-radius: 999px;
+      padding: 12px 30px;
+      font-weight: 700;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+    .bk-date-badge .num { font-size: 1.7rem; font-weight: 900; }
+    .bk-date-badge .sub { font-size: 0.8rem; font-weight: 500; color: var(--text-light); }
+
+    /* ── イラスト ── */
+    .illust-frame {
+      background: #F0E8FF;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      margin: -30px auto 0;
+      max-width: 900px;
+      position: relative;
+      z-index: 2;
+    }
+    .illust-frame svg { display: block; width: 100%; height: auto; }
+    .illust-caption {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    /* ── 概要カード ── */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .overview-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 26px 22px;
+      text-align: center;
+    }
+    .overview-card .oc-icon { font-size: 2.2rem; margin-bottom: 10px; }
+    .overview-card .oc-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 700; margin-bottom: 6px; }
+    .overview-card .oc-main { font-size: 1.05rem; font-weight: 700; color: var(--primary-dark); line-height: 1.6; }
+    .overview-card .oc-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 6px; }
+
+    /* ── プログラムカード ── */
+    .program-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .program-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 26px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      border-left: 5px solid var(--accent);
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .program-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
+    .program-card .pc-icon {
+      flex-shrink: 0;
+      width: 56px; height: 56px;
+      background: var(--primary-pale);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem;
+    }
+    .program-card .pc-title { font-weight: 700; color: var(--primary-dark); font-size: 1.02rem; margin-bottom: 6px; }
+    .program-card .pc-desc { font-size: 0.88rem; color: var(--text-light); line-height: 1.75; }
+
+    @media (max-width: 768px) {
+      .overview-grid { grid-template-columns: 1fr; }
+      .program-grid { grid-template-columns: 1fr; }
+      .bk-hero h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <div class="logo-mark">🌸</div>
+        <div class="logo-text">
+          春日校区コミュニティ協議会
+          <small>大阪府枚方市</small>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav">
+        <a href="index.html">ホーム</a>
+        <a href="about.html">協議会について</a>
+        <a href="organizations.html">傘下組織</a>
+        <a href="activities.html">活動情報</a>
+        <a href="news.html">お知らせ</a>
+        <a href="haifubutsu.html">配布物</a>
+        <a href="kouhou.html">広報誌</a>
+        <a href="disaster.html">災害時の対応</a>
+        <a href="contact.html">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── ヒーロー ── -->
+  <section class="bk-hero">
+    <div class="bk-hero-inner">
+      <div class="bk-hero-badge">🛡️ 校区行事</div>
+      <h1>みんなで学ぼう、そなえよう<br>校区防災訓練を開催します</h1>
+      <p>避難所が実際にどのように開設され、どんな設備が整っているのかを知っていただく機会です。ぜひご家族・ご近所の方とご参加ください。</p>
+      <div class="bk-date-badge">
+        <span class="num">2026年11月21日(土)</span>
+        <span class="sub">14:00〜</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── イラスト ── -->
+  <div class="container">
+    <figure class="illust-frame">
+      <svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="illustTitle">
+        <title id="illustTitle">体育館で行われる避難所開設訓練のイメージイラスト</title>
+
+        <defs>
+          <g id="p-stand">
+            <rect x="-8" y="-20" width="7" height="20" fill="#4A2870"/>
+            <rect x="1" y="-20" width="7" height="20" fill="#4A2870"/>
+            <rect x="-12" y="-55" width="24" height="38" rx="8" fill="currentColor"/>
+            <rect x="-18" y="-52" width="7" height="26" rx="3" fill="currentColor"/>
+            <rect x="11" y="-52" width="7" height="26" rx="3" fill="currentColor"/>
+            <circle cx="0" cy="-66" r="12" fill="#F4C9A0"/>
+            <path d="M-12,-70 a12,12 0 0 1 24,0 z" fill="#3A2A20"/>
+          </g>
+          <g id="p-seat">
+            <rect x="-14" y="-4" width="28" height="6" fill="#8B5A2B"/>
+            <rect x="-10" y="2" width="4" height="14" fill="#6B4423"/>
+            <rect x="6" y="2" width="4" height="14" fill="#6B4423"/>
+            <rect x="-14" y="-10" width="14" height="8" rx="3" fill="#4A2870"/>
+            <rect x="0" y="-10" width="14" height="8" rx="3" fill="#4A2870"/>
+            <rect x="-11" y="-42" width="22" height="34" rx="8" fill="currentColor"/>
+            <rect x="-16" y="-38" width="6" height="20" rx="3" fill="currentColor"/>
+            <rect x="10" y="-38" width="6" height="20" rx="3" fill="currentColor"/>
+            <circle cx="0" cy="-52" r="11" fill="#F4C9A0"/>
+            <path d="M-11,-56 a11,11 0 0 1 22,0 z" fill="#3A2A20"/>
+          </g>
+        </defs>
+
+        <!-- 壁 -->
+        <rect x="0" y="0" width="900" height="250" fill="#F0E8FF"/>
+        <!-- 床（体育館フロア） -->
+        <rect x="0" y="250" width="900" height="170" fill="#EBE0C8"/>
+        <g stroke="#DDCFA6" stroke-width="2">
+          <line x1="0" y1="290" x2="900" y2="290"/>
+          <line x1="0" y1="335" x2="900" y2="335"/>
+          <line x1="0" y1="380" x2="900" y2="380"/>
+        </g>
+
+        <!-- 窓 -->
+        <g>
+          <rect x="45" y="35" width="100" height="80" rx="6" fill="#BFD8F5" stroke="#8FB2E0" stroke-width="4"/>
+          <line x1="95" y1="35" x2="95" y2="115" stroke="#8FB2E0" stroke-width="3"/>
+          <line x1="45" y1="75" x2="145" y2="75" stroke="#8FB2E0" stroke-width="3"/>
+        </g>
+        <g>
+          <rect x="755" y="35" width="100" height="80" rx="6" fill="#BFD8F5" stroke="#8FB2E0" stroke-width="4"/>
+          <line x1="805" y1="35" x2="805" y2="115" stroke="#8FB2E0" stroke-width="3"/>
+          <line x1="755" y1="75" x2="855" y2="75" stroke="#8FB2E0" stroke-width="3"/>
+        </g>
+
+        <!-- 横断幕 -->
+        <g transform="rotate(-2 450 70)">
+          <line x1="300" y1="20" x2="290" y2="45" stroke="#4A2870" stroke-width="3"/>
+          <line x1="600" y1="20" x2="610" y2="45" stroke="#4A2870" stroke-width="3"/>
+          <rect x="285" y="45" width="330" height="54" rx="10" fill="#6B3FA0"/>
+          <text x="450" y="80" font-family="'Noto Sans JP', sans-serif" font-size="24" font-weight="700" fill="white" text-anchor="middle">避難所開設訓練</text>
+        </g>
+
+        <!-- 左：簡易テント -->
+        <g>
+          <ellipse cx="95" cy="335" rx="60" ry="10" fill="#000" opacity="0.06"/>
+          <path d="M95,255 L40,335 L150,335 Z" fill="#FFD9E0" stroke="#FF8FA3" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M95,285 L75,335 L115,335 Z" fill="#FFC2CE"/>
+        </g>
+        <g>
+          <ellipse cx="185" cy="340" rx="55" ry="9" fill="#000" opacity="0.06"/>
+          <path d="M185,265 L135,340 L235,340 Z" fill="#CFE8E3" stroke="#4FC1B0" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M185,292 L167,340 L203,340 Z" fill="#B7DED7"/>
+        </g>
+        <text x="140" y="240" font-size="13" fill="#8B6FA8" text-anchor="middle" font-weight="700">避難スペース</text>
+
+        <!-- 中央：非常食の食べ比べ -->
+        <g>
+          <ellipse cx="200" cy="392" rx="140" ry="10" fill="#000" opacity="0.06"/>
+          <rect x="80" y="330" width="240" height="14" rx="4" fill="#8B5A2B"/>
+          <rect x="90" y="344" width="8" height="46" fill="#6B4423"/>
+          <rect x="300" y="344" width="8" height="46" fill="#6B4423"/>
+          <!-- 器 -->
+          <ellipse cx="130" cy="326" rx="20" ry="8" fill="#FFF6E5" stroke="#E8A020" stroke-width="2"/>
+          <ellipse cx="180" cy="324" rx="18" ry="7" fill="#FFF6E5" stroke="#E8A020" stroke-width="2"/>
+          <ellipse cx="230" cy="326" rx="20" ry="8" fill="#FFF6E5" stroke="#E8A020" stroke-width="2"/>
+          <ellipse cx="278" cy="324" rx="16" ry="7" fill="#FFF6E5" stroke="#E8A020" stroke-width="2"/>
+        </g>
+        <use href="#p-seat" x="70" y="390" style="color:#4FC1B0"/>
+        <use href="#p-seat" x="330" y="390" transform="scale(-1,1) translate(-660,0)" style="color:#FF8FA3"/>
+        <text x="200" y="410" font-size="13" fill="#8B6FA8" text-anchor="middle" font-weight="700">非常食の食べ比べ</text>
+
+        <!-- 右：仮設トイレ -->
+        <g>
+          <ellipse cx="770" cy="392" rx="95" ry="9" fill="#000" opacity="0.06"/>
+          <rect x="690" y="235" width="160" height="140" rx="10" fill="#C3D0DF" stroke="#7E8FA6" stroke-width="4"/>
+          <rect x="750" y="290" width="46" height="85" rx="4" fill="#8FA0B8"/>
+          <circle cx="789" cy="332" r="3" fill="#5C6C82"/>
+          <text x="770" y="270" font-size="26" text-anchor="middle">🚻</text>
+        </g>
+        <text x="770" y="410" font-size="13" fill="#8B6FA8" text-anchor="middle" font-weight="700">避難所設備の見学</text>
+
+        <!-- 防災士による講座 -->
+        <g transform="translate(560,330)">
+          <rect x="-3" y="-95" width="6" height="95" fill="#8B5A2B"/>
+          <rect x="-48" y="-150" width="96" height="62" rx="4" fill="white" stroke="#D8C8A8" stroke-width="2"/>
+          <text x="0" y="-122" font-size="28" text-anchor="middle">💡</text>
+          <text x="0" y="-100" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#6B3FA0" text-anchor="middle" font-weight="700">そなえよう</text>
+        </g>
+        <use href="#p-stand" x="490" y="400" style="color:#E8A020"/>
+        <use href="#p-seat" x="600" y="400" transform="scale(0.85)" style="color:#9B6FD0"/>
+        <use href="#p-seat" x="660" y="400" transform="scale(0.85)" style="color:#6B3FA0"/>
+        <use href="#p-seat" x="720" y="400" transform="scale(0.85)" style="color:#4FC1B0"/>
+        <text x="600" y="418" font-size="13" fill="#8B6FA8" text-anchor="middle" font-weight="700">防災士による防災講座</text>
+      </svg>
+    </figure>
+    <p class="illust-caption">※ イメージイラストです。実際の会場のようすとは異なります。</p>
+  </div>
+
+  <!-- ── 開催概要 ── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <h2 class="section-title">開催概要</h2>
+        <p class="section-desc">会場の詳細は現在調整中です。決まり次第あらためてお知らせします</p>
+      </div>
+      <div class="overview-grid">
+        <div class="overview-card">
+          <div class="oc-icon">📅</div>
+          <div class="oc-label">日時</div>
+          <div class="oc-main">2026年11月21日(土)<br>14:00〜</div>
+          <div class="oc-note">終了時刻は調整中</div>
+        </div>
+        <div class="overview-card">
+          <div class="oc-icon">📍</div>
+          <div class="oc-label">会場</div>
+          <div class="oc-main">春日小学校<br>体育館ほか</div>
+          <div class="oc-note">※詳細は調整中</div>
+        </div>
+        <div class="overview-card">
+          <div class="oc-icon">🙋</div>
+          <div class="oc-label">対象</div>
+          <div class="oc-main">校区にお住まいの<br>皆さま</div>
+          <div class="oc-note">どなたでも参加できます</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── なぜ実施するのか ── -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">なぜ今、防災訓練を行うのか</h2>
+      </div>
+      <div class="greeting-card">
+        <div class="greeting-text">
+          <p>熊本県などでは、近年も大きな地震が発生し、多くの方が避難所での生活を経験されました。いざ災害が起きたとき、避難所が「どのように開設され」「どのような設備が整っているのか」を知っているかどうかで、安心感は大きく変わります。</p>
+          <p>今回の防災訓練は、実際に避難所開設の流れを体験し、非常食や設備に実際に触れていただくことで、地域の皆さまに防災をより身近に感じていただく機会にしたいと考えています。</p>
+          <p>小さなお子さまからお年寄りまで、どなたでも楽しみながら学んでいただける内容を予定しています。ぜひお誘い合わせのうえご参加ください。</p>
+        </div>
+        <div class="greeting-img">🏫</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── プログラム内容 ── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <h2 class="section-title">当日の内容（予定）</h2>
+        <p class="section-desc">現時点で予定している主なプログラムです</p>
+      </div>
+      <div class="program-grid">
+        <div class="program-card">
+          <div class="pc-icon">🏫</div>
+          <div>
+            <div class="pc-title">避難所開設訓練</div>
+            <div class="pc-desc">実際に避難所を開設する手順を、自主防災会のメンバーと一緒に体験します。受付や案内の流れなど、災害時に役立つ動きを学びます。</div>
+          </div>
+        </div>
+        <div class="program-card">
+          <div class="pc-icon">🍚</div>
+          <div>
+            <div class="pc-title">非常食の食べ比べ</div>
+            <div class="pc-desc">実際の非常食を試食し、味や使い方を比べていただけます。ご家庭での備蓄選びの参考にしていただけます。</div>
+          </div>
+        </div>
+        <div class="program-card">
+          <div class="pc-icon">🚻</div>
+          <div>
+            <div class="pc-title">避難所の設備見学</div>
+            <div class="pc-desc">仮設トイレなど、避難所で使われる設備を実際に見て、使い方を確認していただけます。</div>
+          </div>
+        </div>
+        <div class="program-card">
+          <div class="pc-icon">🏋️</div>
+          <div>
+            <div class="pc-title">体育館での避難体験</div>
+            <div class="pc-desc">体育館に実際に避難スペースを設営し、避難生活がどのようなものかを体感していただけます。</div>
+          </div>
+        </div>
+        <div class="program-card" style="grid-column: 1 / -1;">
+          <div class="pc-icon">🎤</div>
+          <div>
+            <div class="pc-title">防災士による防災講座</div>
+            <div class="pc-desc">地域の防災士が、災害への備えや避難のポイントについてわかりやすくお話しします。ご家庭でできる備えのヒントも紹介する予定です。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 詳細は調整中 ── -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="alert alert-info" style="max-width: 780px; margin: 0 auto; font-size: 0.95rem;">
+        📋 持ち物・参加方法などの詳細は、現在調整中です。決まりましたら、このサイトの<a href="news.html">お知らせ</a>や自治会の回覧板でご案内します。
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="section">
+    <div class="container">
+      <div class="card" style="background:var(--primary-pale); border:none; text-align:center; padding:40px 24px;">
+        <div style="font-size:2.5rem; margin-bottom:12px;">🌸</div>
+        <h3 style="color:var(--primary-dark); margin-bottom:10px;">ぜひご家族・ご近所の方とご参加ください</h3>
+        <p style="font-size:0.95rem; color:var(--text-light); margin-bottom:24px;">
+          日頃からの「そなえ」が、いざというときの安心につながります。<br>
+          最新情報は活動情報・お知らせページで随時更新します。
+        </p>
+        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+          <a href="activities.html" class="btn btn-primary">活動情報を見る</a>
+          <a href="disaster.html" class="btn btn-outline" style="color:var(--primary); border-color:var(--primary);">災害時の対応について</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <div class="logo-mark">🌸</div>
+            <div class="footer-site-name">
+              春日校区コミュニティ協議会
+              <small>大阪府枚方市</small>
+            </div>
+          </div>
+          <p class="footer-desc">地域の皆さまが安心して暮らせるまちづくりのため、区内の各自治会・各種団体と連携して活動しています。</p>
+        </div>
+        <div>
+          <div class="footer-col-title">サイトマップ</div>
+          <ul class="footer-nav">
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="about.html">協議会について</a></li>
+            <li><a href="organizations.html">傘下組織</a></li>
+            <li><a href="activities.html">活動情報</a></li>
+            <li><a href="news.html">お知らせ</a></li>
+            <li><a href="disaster.html">災害時の対応</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">関連リンク</div>
+          <ul class="footer-nav">
+            <li><a href="https://www.city.hirakata.osaka.jp/" target="_blank" rel="noopener">枚方市公式サイト</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 春日校区コミュニティ協議会 All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
