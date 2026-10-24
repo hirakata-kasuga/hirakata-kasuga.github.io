@@ -17,5 +17,10 @@
  */
 const SITE_CONFIG = {
   SPREADSHEET_ID: '1vCOsZNghw_of0muLrmfdkKL4bPEGEmAHleddrwSEsz4',
+
+  // 部会向け投稿ページ(post.html)の送信先。Apps Script をデプロイして発行された
+  // 「ウェブアプリ」のURL（https://script.google.com/macros/s/…/exec）を貼る。
+  // 設定手順は事務局で別途保管。空のままだと投稿ページは「設定未完了」と表示する。
+  POST_ENDPOINT: '',
 };
 window.SITE_CONFIG = SITE_CONFIG;
