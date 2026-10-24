@@ -15,6 +15,17 @@ const CAT_CLASS = {
   '重要': 'tag-urgent',
 };
 
+/** 添付ファイル列（改行 または「, 」区切りで複数URL）→ URLの配列 */
+function splitFileUrls(cell) {
+  return String(cell || '').split(/\n|,\s*/).map(u => u.trim()).filter(Boolean);
+}
+
+/** Drive URL → サムネイルURL（写真もPDFの1ページ目も表示できる） */
+function fileThumbUrl(url) {
+  const m = url.match(/\/d\/([a-zA-Z0-9_-]+)/) || url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+  return m ? `https://drive.google.com/thumbnail?id=${m[1]}&sz=w400` : '';
+}
+
 /** Google Forms アップロードURL / Drive 共有URL → 閲覧URLに変換 */
 function fileViewUrl(url) {
   if (!url) return '';
@@ -24,7 +35,8 @@ function fileViewUrl(url) {
   // open?id=ID 形式（Google Forms アップロード）
   const m2 = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
   if (m2) return `https://drive.google.com/file/d/${m2[1]}/view?usp=sharing`;
-  return url.trim();
+  // Drive以外のURLは https のものだけ通す（javascript: などを防ぐ）
+  return /^https:\/\//i.test(url.trim()) ? url.trim() : '';
 }
 
 (async () => {
@@ -90,11 +102,16 @@ function fileViewUrl(url) {
       const cat      = cellStr(r.c?.[3]);
       const title    = cellStr(r.c?.[4]);
       const body     = cellStr(r.c?.[5]);
-      const fileUrl  = fileViewUrl(cellStr(r.c?.[6]));
+      const fileUrls = splitFileUrls(cellStr(r.c?.[6])).filter(u => fileViewUrl(u));
       const tagClass = CAT_CLASS[cat] || 'tag-info';
 
-      const fileLink = fileUrl
-        ? `<a href="${esc(fileUrl)}" target="_blank" rel="noopener" class="nc-pdf-link">📎 添付ファイルを開く</a>`
+      const fileLink = fileUrls.length
+        ? `<div class="nc-files">${fileUrls.map((u, i) => {
+            const thumb = fileThumbUrl(u);
+            return `<a href="${esc(fileViewUrl(u))}" target="_blank" rel="noopener" class="nc-file" title="添付ファイル${i + 1}を開く">`
+              + (thumb ? `<img src="${esc(thumb)}" alt="添付ファイル${i + 1}" loading="lazy">` : `📎 添付${i + 1}`)
+              + `</a>`;
+          }).join('')}</div>`
         : '';
 
       const bodyHtml = body

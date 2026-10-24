@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>情報の投稿 | 春日校区コミュニティ協議会</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .post-card { background:white; border-radius:var(--radius-lg); box-shadow:var(--shadow); padding:32px; max-width:640px; margin:0 auto; }
+    .post-lead { color:var(--text-light); margin-bottom:24px; line-height:1.8; }
+    .post-hint { font-size:0.82rem; color:var(--text-muted); margin-top:6px; }
+    .post-hp { position:absolute; left:-9999px; }
+    .post-msg { margin-top:16px; padding:12px 16px; border-radius:var(--radius); font-size:0.92rem; display:none; }
+    .post-msg.error { display:block; background:#FDECEA; color:#C0392B; }
+    .post-done { text-align:center; padding:32px 0; }
+    .post-done .icon { font-size:3rem; margin-bottom:16px; }
+    .post-previews { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .post-previews .pv { width:84px; height:84px; border-radius:var(--radius); border:1px solid var(--border); object-fit:cover; background:var(--bg-light); }
+    .post-previews .pv-pdf { display:flex; align-items:center; justify-content:center; font-size:0.8rem; color:var(--primary-dark); font-weight:700; text-align:center; }
+    #postSubmit { width:100%; justify-content:center; font-size:1.05rem; padding:14px; }
+    #postSubmit:disabled { opacity:0.6; cursor:wait; }
+    @media (max-width:600px) { .post-card { padding:22px 18px; } }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <div class="logo-mark">🌸</div>
+      <div class="logo-text">春日校区コミュニティ協議会<small>大阪府枚方市</small></div>
+    </a>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav">
+      <a href="index.html">ホーム</a>
+      <a href="about.html">協議会について</a>
+      <a href="organizations.html">傘下組織</a>
+      <a href="activities.html">活動情報</a>
+      <a href="news.html">お知らせ</a>
+      <a href="haifubutsu.html">配布物</a>
+      <a href="kouhou.html">広報誌</a>
+      <a href="disaster.html">災害時の対応</a>
+        <a href="contact.html">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-header">
+  <div class="container">
+    <h1>情報の投稿</h1>
+    <p>各部会・自治会の方向けの投稿ページです</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="post-card" id="postCard">
+      <p class="post-lead">
+        お知らせや行事の情報を、ここから送れます。<br>
+        メールアドレスやログインは不要です。合言葉は事務局からお知らせしたものを入力してください。<br>
+        送信した内容は、事務局が確認してからサイトに掲載されます。
+      </p>
+
+      <form id="postForm" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="fOrg">部会・自治会名<span class="req">必須</span></label>
+          <select class="form-control" id="fOrg" required></select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="fPass">合言葉<span class="req">必須</span></label>
+          <input class="form-control" type="password" id="fPass" autocomplete="off" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="fCat">種類</label>
+          <select class="form-control" id="fCat">
+            <option value="情報">情報</option>
+            <option value="行事">行事</option>
+            <option value="重要">重要</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="fTitle">タイトル<span class="req">必須</span></label>
+          <input class="form-control" type="text" id="fTitle" maxlength="100" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="fBody">内容</label>
+          <textarea class="form-control" id="fBody" maxlength="3000"></textarea>
+          <p class="post-hint">個人の電話番号・住所・メールアドレスは書かないでください（サイト上に公開されます）。</p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="fFile">写真・PDF（10個まで）</label>
+          <input class="form-control" type="file" id="fFile" accept="image/*,application/pdf" multiple>
+          <p class="post-hint">資料を写真で撮ったものでもOKです。複数枚をまとめて選べます。写真は文字が読める大きさのまま、自動で軽くして送ります。PDFは1つ8MBまで。</p>
+          <div class="post-previews" id="filePreviews"></div>
+        </div>
+
+        <div class="post-hp" aria-hidden="true">
+          <label>この欄は空のままにしてください<input type="text" id="fHp" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="postSubmit">送信する</button>
+        <div class="post-msg" id="postMsg" role="alert"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <div class="logo-mark">🌸</div>
+          <div class="footer-site-name">春日校区コミュニティ協議会<small>大阪府枚方市</small></div>
+        </div>
+        <p class="footer-desc">地域の皆さまが安心して暮らせるまちづくりのため、区内の各自治会・各種団体と連携して活動しています。</p>
+      </div>
+      <div>
+        <div class="footer-col-title">サイトマップ</div>
+        <ul class="footer-nav">
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="about.html">協議会について</a></li>
+          <li><a href="organizations.html">傘下組織</a></li>
+          <li><a href="activities.html">活動情報</a></li>
+          <li><a href="news.html">お知らせ</a></li>
+          <li><a href="disaster.html">災害時の対応</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">関連リンク</div>
+        <ul class="footer-nav">
+          <li><a href="https://www.city.hirakata.osaka.jp/" target="_blank" rel="noopener">枚方市公式サイト</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 春日校区コミュニティ協議会 All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/post.js"></script>
+</body>
+</html>
