@@ -21,6 +21,6 @@ const SITE_CONFIG = {
   // 部会向け投稿ページ(post.html)の送信先。Apps Script をデプロイして発行された
   // 「ウェブアプリ」のURL（https://script.google.com/macros/s/…/exec）を貼る。
   // 設定手順は事務局で別途保管。空のままだと投稿ページは「設定未完了」と表示する。
-  POST_ENDPOINT: '',
+  POST_ENDPOINT: 'https://script.google.com/macros/s/AKfycbw60UYAZdxH5rCSHyStJw_piftt63mFoZANJm8iMEV0Ow1FIu0DoP4nqvws3xhUbZ3z/exec',
 };
 window.SITE_CONFIG = SITE_CONFIG;
