@@ -1,13 +1,14 @@
 /**
  * 投稿受付 Web アプリ（Google Apps Script）
  *
- * 流れ:
+ * 流れ（AUTO_PUBLISH = false の承認制のとき）:
  *   post.html → doPost → 【非公開】スプレッドシートの「投稿受付」タブ + 非公開のDriveファイル
  *   役員が内容を確認し、公開列を「公開する」に変更
  *   → publishApproved（5分おきに自動実行）が、ファイルを閲覧可にして
  *     【公開】サイト用スプレッドシートの「組織お知らせ」へコピー
  *
  * こうすることで、確認前の投稿（本文・写真）は外から一切読めない。
+ * AUTO_PUBLISH = true のときは、承認を待たず、投稿を受け取った時点で公開側へ書き込む。
  *
  * このスクリプトは「非公開」側のスプレッドシート（合言葉・投稿受付を置く方）の
  * 拡張機能 → Apps Script から作成する。手順は別途保管の手順書を参照。
@@ -20,6 +21,7 @@ const SITE_SS_ID = '【サイト用（公開）スプレッドシートのID】'
 const PASS_SHEET = '合言葉';      // A列: 組織名 / B列: 合言葉
 const IN_SHEET   = '投稿受付';    // 非公開側。列: タイムスタンプ/組織名/公開日/カテゴリ/タイトル/内容/添付ファイル/公開/処理結果
 const OUT_SHEET  = '組織お知らせ'; // 公開側（サイト用）
+const AUTO_PUBLISH = true;         // true: 投稿を確認なしですぐ公開する / false: 事務局が「公開する」にするまで公開しない
 const MAX_FAILS  = 5;             // 合言葉の間違いがこの回数に達したら10分間その組織の投稿を止める
 const MAX_FILES  = 10;
 const MAX_BYTES  = 10 * 1024 * 1024; // 1ファイルの上限（デコード後）
@@ -48,9 +50,19 @@ function doPost(e) {
     const urls = files.map((f, i) => saveFile_(org, title, f, i + 1));
 
     const category = ['情報', '行事', '重要'].indexOf(p.category) >= 0 ? p.category : '情報';
-    const now = new Date();
-    appendRow_(SpreadsheetApp.getActive().getSheetByName(IN_SHEET),
-      [now, org, now, category, title, body, urls.join('\n'), '確認待ち', '']);
+    const now  = new Date();
+    const inSh = SpreadsheetApp.getActive().getSheetByName(IN_SHEET);
+    const fileCell = urls.join('\n');
+
+    if (AUTO_PUBLISH) {
+      // 即公開: ファイルを閲覧可にして公開側へ書き込み、受付側には記録として残す
+      urls.forEach(u => shareFile_(u));
+      appendRow_(SpreadsheetApp.openById(SITE_SS_ID).getSheetByName(OUT_SHEET),
+        [now, org, now, category, title, body, fileCell, '公開する']);
+      appendRow_(inSh, [now, org, now, category, title, body, fileCell, '自動公開', '反映済 ' + stampNow_()]);
+    } else {
+      appendRow_(inSh, [now, org, now, category, title, body, fileCell, '確認待ち', '']);
+    }
     return reply({ ok: true });
   } catch (err) {
     console.error(err);
@@ -104,6 +116,15 @@ function appendRow_(sheet, values) {
   [1, 3].forEach(c => {                                      // A(タイムスタンプ)・C(公開日)は日時に戻す
     if (values[c - 1] instanceof Date) sheet.getRange(r, c).setNumberFormat('yyyy/MM/dd HH:mm:ss').setValue(values[c - 1]);
   });
+}
+
+function shareFile_(url) {
+  const id = fileId_(url);
+  if (id) DriveApp.getFileById(id).setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+}
+
+function stampNow_() {
+  return Utilities.formatDate(new Date(), 'Asia/Tokyo', 'yyyy/MM/dd HH:mm');
 }
 
 /** Drive URL → ファイルID */
