@@ -166,7 +166,23 @@
       border-radius: var(--radius-lg);
       padding: 26px 30px;
     }
-    .hirapo-box .hp-icon { font-size: 2.6rem; line-height: 1; flex-shrink: 0; }
+    .hirapo-box .hp-image {
+      flex-shrink: 0;
+      width: 320px;
+      max-width: 100%;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    }
+    .hirapo-box .hp-image img { width: 100%; display: block; }
+    .hirapo-box .hp-image .hp-cap {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 7px 10px;
+      line-height: 1.6;
+    }
     .hirapo-box .hp-title { font-weight: 700; color: #8A5A00; font-size: 1.12rem; margin-bottom: 8px; }
     .hirapo-box .hp-desc { font-size: 0.92rem; color: #6B4A00; line-height: 1.8; }
 
@@ -398,7 +414,6 @@
     <div class="container">
       <div class="section-head center">
         <h2 class="section-title">開催概要</h2>
-        <p class="section-desc">会場の詳細は現在調整中です。決まり次第あらためてお知らせします</p>
       </div>
       <div class="overview-grid">
         <div class="overview-card">
@@ -635,7 +650,12 @@
   <section class="section section-alt">
     <div class="container">
       <div class="hirapo-box" style="max-width: 860px; margin: 0 auto;">
-        <div class="hp-icon">🎫</div>
+        <div class="hp-image">
+          <img src="images/hirapo-card-app.jpg"
+               alt="ひらポカード2種類と、ひらポアプリの画面。アプリにはQRコードと保有ポイントが表示されている。"
+               loading="lazy" width="756" height="388">
+          <div class="hp-cap">ひらポカード／ひらポアプリ</div>
+        </div>
         <div style="flex:1; min-width:260px;">
           <div class="hp-title">ひらポ（枚方ポイント）が付与されます</div>
           <div class="hp-desc">
