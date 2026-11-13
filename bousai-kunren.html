@@ -119,6 +119,26 @@
     }
     .program-card .pc-title { font-weight: 700; color: var(--primary-dark); font-size: 1.02rem; margin-bottom: 6px; }
     .program-card .pc-desc { font-size: 0.88rem; color: var(--text-light); line-height: 1.75; }
+    .program-card .pc-theme {
+      display: inline-block;
+      background: var(--primary-pale);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 10px 16px;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.7;
+    }
+    .program-card .pc-theme .pc-theme-label {
+      display: block;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      margin-bottom: 2px;
+    }
 
     /* ── 写真 ── */
     .photo-frame {
@@ -208,6 +228,11 @@
       .bk-hero h1 { font-size: 1.5rem; }
       .gift-layout { grid-template-columns: 1fr; }
       .hirapo-box { padding: 22px; gap: 16px; }
+      .program-card .pc-theme {
+        display: block;
+        font-size: 0.95rem;
+        padding: 10px 13px;
+      }
     }
 
     /* スマホでは品目一覧を1件ずつの縦積みにする */
@@ -493,6 +518,10 @@
           <div class="pc-icon">🎤</div>
           <div>
             <div class="pc-title">防災士による防災講座</div>
+            <div class="pc-theme">
+              <span class="pc-theme-label">テーマ</span>
+              避難所へ行く？自宅に残る？<br>〜「避難の判断基準」〜
+            </div>
             <div class="pc-desc">地域の防災士が、災害への備えや避難のポイントについてわかりやすくお話しします。ご家庭でできる備えのヒントも紹介する予定です。</div>
           </div>
         </div>
